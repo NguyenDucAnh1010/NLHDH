@@ -108,5 +108,46 @@ namespace NLHDH
             // Đóng form hiện tại
             Close();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            Hide();
+
+            // Tạo một đối tượng "TackClone" từ lớp (class) "srtn"
+            taskclone form = new taskclone();
+
+            // Hiển thị form "srtn" dưới dạng hộp thoại
+            form.ShowDialog();
+
+            // Đặt kết quả trả về của hộp thoại là "DialogResult.OK"
+            DialogResult = DialogResult.OK;
+
+            // Đóng form hiện tại
+            Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Ẩn form hiện tại
+            Hide();
+
+            // Tạo một đối tượng "TackClone" từ lớp (class) "srtn"
+            ShareData form = new ShareData();
+
+            // Hiển thị form "srtn" dưới dạng hộp thoại
+            form.ShowDialog();
+
+            // Đặt kết quả trả về của hộp thoại là "DialogResult.OK"
+            DialogResult = DialogResult.OK;
+
+            // Đóng form hiện tại
+            Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

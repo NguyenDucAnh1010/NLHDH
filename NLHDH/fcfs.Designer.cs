@@ -331,6 +331,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
+            CancelButton = button2;
             ClientSize = new Size(568, 573);
             Controls.Add(button1);
             Controls.Add(button4);

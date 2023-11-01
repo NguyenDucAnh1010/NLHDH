@@ -86,22 +86,17 @@ namespace NLHDH
         private void button3_Click(object sender, EventArgs e)
         {
             int avgwt1 = 0, avgta1 = 0, flag = 0;
-
             // Khởi tạo mảng rt với kích thước bằng giá trị của biến n
             int[] rt = new int[Convert.ToInt32(n)];
-
             // Lấy giá trị từ ô "n" và lưu vào biến remain
             int remain = Convert.ToInt32(n);
-
             // Lấy giá trị từ ô "numericUpDown2.Value" và lưu vào biến ts
             int ts = Convert.ToInt32(numericUpDown2.Value);
-
             // Lấy giá trị từ cột "Column3" của từng hàng trong DataGridView và lưu vào mảng rt
             for (int i = 0; i < n; i++)
             {
                 rt[i] = Convert.ToInt32(dataGridView1.Rows[i].Cells["Column3"].Value);
             }
-
             // Vòng lặp để thực hiện thuật toán
             for (int time = 0, i = 0; remain != 0;)
             {
@@ -118,19 +113,19 @@ namespace NLHDH
                     rt[i] -= ts; // Giảm thời gian còn lại của quá trình i đi ts
                     time += ts; // Cập nhật thời gian
                 }
-
                 // Nếu thời gian còn lại của quá trình i bằng 0 và đã xảy ra chạy xong (flag = 1)
                 if (rt[i] == 0 && flag == 1)
                 {
                     remain--; // Giảm số lượng quá trình còn lại
                               // Tính toán giá trị cho các cột trong DataGridView
                     dataGridView1.Rows[i].Cells["Column5"].Value = time - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column2"].Value);
-                    dataGridView1.Rows[i].Cells["Column6"].Value = time - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column2"].Value) - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column3"].Value);
-                    avgwt1 += time - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column2"].Value) - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column3"].Value);
+                    dataGridView1.Rows[i].Cells["Column6"].Value = time - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column2"].Value)
+                        - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column3"].Value);
+                    avgwt1 += time - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column2"].Value)
+                        - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column3"].Value);
                     avgta1 += time - Convert.ToInt32(dataGridView1.Rows[i].Cells["Column2"].Value);
                     flag = 0; // Đặt lại flag về 0
                 }
-
                 // Xác định quá trình kế tiếp để thực hiện
                 if (i == n - 1)
                     i = 0;
@@ -139,7 +134,6 @@ namespace NLHDH
                 else
                     i = 0;
             }
-
             // Tính toán và hiển thị kết quả trung bình
             avgta.Text = (avgta1 / n).ToString();
             avgwt.Text = (avgwt1 / n).ToString();
@@ -189,80 +183,52 @@ namespace NLHDH
             Close(); // Đóng form hiện tại
         }
 
+        // Hàm tạo số lượng project tương ứng muôn
         private void button1_Click(object sender, EventArgs e)
         {
             if (n == 0)
             {
                 // Nếu giá trị của biến n là 0, tức là chưa có hàng nào trong dataGridView1
-
                 n = numericUpDown1.Value; // Gán giá trị của numericUpDown1 vào biến n
-
                 for (int i = 0; i < numericUpDown1.Value; i++)
                 {
                     // Thêm một hàng mới vào bảng
                     dataGridView1.Rows.Add();
-
                     // Thiết lập giá trị cho từng ô trong hàng
-
-                    // Giả sử cột "PID" đã được tạo trước đó
                     dataGridView1.Rows[i].Cells["Column1"].Value = i + 1;
-
-                    // Giả sử cột "ArrivalTime" đã được tạo trước đó
                     dataGridView1.Rows[i].Cells["Column2"].Value = 0;
-
-                    // Giả sử cột "BurstTime" đã được tạo trước đó
                     dataGridView1.Rows[i].Cells["Column3"].Value = 0;
-
-                    // Giả sử cột "Turnaround" đã được tạo trước đó
                     dataGridView1.Rows[i].Cells["Column5"].Value = 0;
-
-                    // Giả sử cột "Waiting" đã được tạo trước đó
                     dataGridView1.Rows[i].Cells["Column6"].Value = 0;
                 }
             }
             else
             {
                 // Nếu giá trị của biến n không phải là 0, tức là đã có hàng trong dataGridView1
-
                 if (n < numericUpDown1.Value)
                 {
                     // Nếu giá trị của biến n nhỏ hơn giá trị củanumericUpDown1.Value, tức là số hàng hiện tại ít hơn số hàng mới được yêu cầu
-
                     for (int i = Convert.ToInt32(n); i < numericUpDown1.Value; i++)
                     {
                         // Thêm một hàng mới vào bảng
                         dataGridView1.Rows.Add();
-
                         // Thiết lập giá trị cho từng ô trong hàng
-
-                        // Giả sử cột "PID" đã được tạo trước đó
                         dataGridView1.Rows[i].Cells["Column1"].Value = i + 1;
-
-                        // Giả sử cột "ArrivalTime" đã được tạo trước đó
                         dataGridView1.Rows[i].Cells["Column2"].Value = 0;
-
-                        // Giả sử cột "BurstTime" đã được tạo trước đó
                         dataGridView1.Rows[i].Cells["Column3"].Value = 0;
-
-                        // Giả sử cột "Turnaround" đã được tạo trước đó
                         dataGridView1.Rows[i].Cells["Column5"].Value = 0;
-
-                        // Giả sử cột "Waiting" đã được tạo trước đó
                         dataGridView1.Rows[i].Cells["Column6"].Value = 0;
                     }
-
                     n = numericUpDown1.Value; // Cập nhật giá trị của biến n
                 }
                 else if (n > numericUpDown1.Value)
                 {
                     // Nếu giá trị của biến n lớn hơn giá trị của numericUpDown1.Value, tức là số hàng hiện tại lớn hơn số hàng mới được yêu cầu
-
                     for (int i = Convert.ToInt32(n - 1); i > numericUpDown1.Value - 1; i--)
                     {
                         // Xóa hàng khỏi bảng
                         dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
                     }
-
                     n = numericUpDown1.Value; // Cập nhật giá trị của biến n
                 }
             }

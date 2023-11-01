@@ -73,6 +73,36 @@ namespace NLHDH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eng {
+            get {
+                object obj = ResourceManager.GetObject("eng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eng__2_ {
+            get {
+                object obj = ResourceManager.GetObject("eng (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eng1 {
+            get {
+                object obj = ResourceManager.GetObject("eng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_circle_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-circle-100", resourceCulture);
@@ -86,6 +116,26 @@ namespace NLHDH.Properties {
         internal static System.Drawing.Bitmap icons8_delete_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vie {
+            get {
+                object obj = ResourceManager.GetObject("vie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4836274778103_70b8b9b5032149eb668037299869d0b3 {
+            get {
+                object obj = ResourceManager.GetObject("z4836274778103_70b8b9b5032149eb668037299869d0b3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
